@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', ifLoaded);
 function ifLoaded(evt) {
   console.log('log', evt);
+  console.log(document.location.pathname);
 
   const refHeader = document.querySelector('.header');
   const refHeaderMenu = document.querySelector('.navigation');
