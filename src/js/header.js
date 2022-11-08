@@ -1,6 +1,8 @@
 // import owner from './owner';
 document.addEventListener('DOMContentLoaded', ifLoaded);
 function ifLoaded(evt) {
+  console.log('log', evt);
+
   const refHeader = document.querySelector('.header');
   const refHeaderMenu = document.querySelector('.navigation');
   const refLibraryBtn = document.querySelector('.my-library-buttons');
