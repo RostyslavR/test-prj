@@ -1,0 +1,75 @@
+.gallery__container {
+  padding: 20px 0 40px;
+
+  @include tablet {
+    padding: 60px 0;
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px 16px;
+  }
+}
+
+.movie-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.modal_description {
+  width: 600px;
+  background-color: white;
+  padding: 40px;
+}
+.js-modal-form {
+  .button {
+    display: inline-block;
+    min-width: 135px;
+    padding: 14px 10px;
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    color: #000000;
+    font-family: 'Roboto';
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  .modal-form__input:checked + .modal-form__text,
+  .button:hover {
+    background-color: #ff6b01;
+    border: 1px solid #ff6b01;
+    color: white;
+  }
+  .modal-form__input {
+    display: none;
+  }
+}
