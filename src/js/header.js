@@ -5,7 +5,7 @@ function ifLoaded(evt) {
   const refNavigation = document.querySelector('.navigation');
   const refRadioBox = document.querySelector('.radio-box');
   const refSearchForm = document.querySelector('.search-box');
-  const refGenreBtn = document.querySelector('.genre-btn');
+  // const refGenreBtn = document.querySelector('.genre-btn');
 
   const activeClass = refNavigation.querySelector('.is-active');
   if (activeClass) activeClass.classList.remove('is-active');
@@ -19,8 +19,8 @@ function ifLoaded(evt) {
 
       refRadioBox.classList.add('is-hidden');
 
-      if (refGenreBtn.classList.contains('is-hidden'))
-        refGenreBtn.classList.remove('is-hidden');
+      // if (refGenreBtn.classList.contains('is-hidden'))
+      //   refGenreBtn.classList.remove('is-hidden');
 
       if (refHeader.classList.contains('library')) refHeader.remove('library');
 
@@ -38,7 +38,7 @@ function ifLoaded(evt) {
 
       refSearchForm.classList.add('is-hidden');
 
-      refGenreBtn.classList.add('is-hidden');
+      // refGenreBtn.classList.add('is-hidden');
 
       if (refRadioBox.classList.contains('is-hidden'))
         refRadioBox.remove('is-hidden');
