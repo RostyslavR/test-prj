@@ -115,7 +115,7 @@ function onPagination(event) {
 async function renderGenres() {
   try {
     genres = await genreAPI.getGenres();
-    // console.log(genres);
+    console.log(genres);
     const markup = murkupFilterGenres(genres);
     refs.dropdownContent.innerHTML = markup.join('');
   } catch (error) {
