@@ -141,6 +141,7 @@ async function renderGenres() {
     refs.dropdownContent.innerHTML = markup.join('');
   } catch (error) {
     error.message;
+    console.log(error);
   }
 }
 
