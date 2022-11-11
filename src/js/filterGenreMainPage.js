@@ -48,9 +48,20 @@ export const genreAPI = new ServerRequest('discover/movie', config); // Ініц
 
 //===============================
 
-refs.button.addEventListener('click', onClick);
+window.addEventListener('click', onClickWin);
 
-function onClick(event) {
+function onClickWin(event) {
+  console.log(event.target);
+  if (refs.dropdownContent.classList.contains('show'))
+    refs.dropdownContent.classList.add('show');
+  renderGenres();
+}
+
+refs.button.addEventListener('click', onClickBtn);
+
+function onClickBtn(event) {
+  console.log(event.target);
+  refs.dropdownContent.classList.add('show');
   renderGenres();
 }
 
