@@ -61,19 +61,36 @@
   height: 100%;
 }
 
-.header a {
-  text-decoration: initial;
-  text-transform: uppercase;
-  &:focus,
-  &:hover {
-    color: aqua;
-  }
+.header__menu-list {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.67;
+  white-space: nowrap;
 }
 
-.header .header__menu-link.is-active {
-  text-decoration-line: underline;
-  text-decoration-thickness: 3px;
-  text-decoration-color: #ff001b;
+.header .header__menu-link {
+  display: block;
+  text-decoration: initial;
+  text-transform: uppercase;
+  color: $bg-primary-light-color;
+  &:focus,
+  &:hover {
+    border: 1px solid $accent-color-primary;
+    background: $accent-color-primary;
+    box-shadow: 0px 8px 43px $accent-color-primary;
+    border-radius: 5px;
+  }
+  &.is-active {
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #ff001b;
+  }
 }
 
 .navigation {
@@ -86,6 +103,12 @@
   display: flex;
   gap: 5%;
   align-items: center;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: $accent-color-primary;
+    text-decoration: none;
+  }
 }
 
 .logo__icon {
@@ -100,28 +123,25 @@
   font-weight: 500;
   font-size: 30px;
   line-height: 1.67;
+  text-transform: uppercase;
   display: none;
+  &:focus,
+  &:hover {
+    box-shadow: inset 0px 8px 43px $accent-color-primary;
+    border-radius: 5px;
+  }
   @include tablet {
     display: block;
   }
 }
 
-.header__menu-list {
-  display: flex;
-  align-items: center;
-  gap: 10%;
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.67;
-  white-space: nowrap;
-}
-
 .setting-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
+  align-items: center;
+  // margin-bottom: 10px;
+  // position: absolute;
+  // left: 10%;
 }
 .sign-list {
   display: flex;
@@ -135,11 +155,13 @@
   width: 50%;
   border-bottom: 1px solid $light-color-primary;
 }
+
 .search__form-input {
+  width: 100%;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.14;
   color: $light-color-primary;
   background-color: inherit;
@@ -149,23 +171,31 @@
 
 .search__button {
   width: 50px;
-  height: 50px;
-
   background-color: inherit;
-  // background-color: rgba(29, 20, 20, 0.5);
-  border-radius: 50%;
+  border-radius: 25%;
   border: 1px;
-  // opacity: 0.3;
   cursor: pointer;
   &:hover,
   &:focus {
-    background-color: rgba(29, 20, 20, 0.5);
+    // border: 1px solid $accent-color-primary;
+    // background: $accent-color-primary;
+    box-shadow: 0px 8px 43px $accent-color-primary;
   }
 }
 
 .form__search-not-succuessful {
   text-align: center;
   color: #ff001b;
+}
+
+.header__filter-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.header.library .header__filter-box {
+  justify-content: end;
 }
 
 .theme-toggle {
@@ -188,8 +218,8 @@ body.dark {
 }
 
 .label {
-  width: 50px;
-  height: 26px;
+  width: 40px;
+  height: 21px;
   background-color: #111;
   display: flex;
   border-radius: 50px;
@@ -201,8 +231,8 @@ body.dark {
 }
 
 .ball {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   background-color: $accent-color-primary;
   position: absolute;
   top: 2px;
@@ -213,7 +243,7 @@ body.dark {
 
 /*  target the elemenent after the label*/
 .checkbox:checked + .label .ball {
-  transform: translateX(24px);
+  transform: translateX(19px);
 }
 
 .icon-sun {
@@ -222,4 +252,15 @@ body.dark {
 
 .icon-moon {
   fill: $light-color-primary;
+}
+
+.my-library__filter-label {
+  cursor: pointer;
+  &:focus,
+  &:hover {
+    // border: 1px solid $accent-color-primary;
+    background: $accent-color-primary;
+    box-shadow: 0px 8px 43px $accent-color-primary;
+    border-radius: 5px;
+  }
 }

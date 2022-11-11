@@ -8,14 +8,12 @@ refs.modal.addEventListener('click', onModalClick);
 
 function onModalClick(event) {
   const target = event.target;
-  const movieCardEl = target.closest('.modal_description');
-  if (!movieCardEl) {
-    // clicked outside card
-    refs.modal.classList.remove('active');
+  if (!target.closest('.modal_description_film')) {
+    return;
   }
-  if (target.closest('.modal-form__label') && target.closest('input')) {
+  if (target.closest('.js-movie-buttons') && target.closest('input')) {
     // add to queued or watched
-    const formEl = target.closest('.js-modal-form');
+    const formEl = target.closest('.js-movie-buttons');
     const formData = new FormData(formEl);
     const status = formData.get('status');
     if (status === 'isWatched') {
@@ -25,17 +23,17 @@ function onModalClick(event) {
       db.cachedMovie.isQueued = true;
       db.cachedMovie.isWatched = false;
     }
-
     db.addMovie(db.cachedMovie);
-    renderMovies();
   }
   if (target.classList.contains('js-remove-button')) {
     db.removeMovie({ id: db.cachedMovie.id });
     db.cachedMovie.isQueued = false;
     db.cachedMovie.isWatched = false;
-    updateBtnStatus();
+  }
+  if (window.location.href.includes('myLibrary')) {
     renderMovies();
   }
+  updateBtnStatus();
 }
 
 // ====================

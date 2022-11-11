@@ -5,17 +5,21 @@
 @import './utils/reset';
 @import './utils/hidden';
 
+@import './components/buttonsMyLibrary';
 @import './components/header';
+@import './components/buttonGenre';
 
 @import './components/containerMainPage';
-@import './components/containerMyLibrary';
+// @import './components/containerMyLibrary';
 @import './components/galleryFilms';
 
 @import './components/modalCardFilmAnna';
 
 @import './components/modalTeam';
 @import './components/movieCardModalAndriy';
+@import './components/scroll_up_button';
 
 @import './components/paginationPage';
 @import './components/spinner';
 @import './components/footer';
+@import './components/login-user';

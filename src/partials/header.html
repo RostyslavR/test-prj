@@ -12,127 +12,115 @@
           />
           <span class="logo__title" data-menu="logo">filmoteka</span>
         </a>
-
         <ul class="header__menu-list">
-          <li class="header__menu-item header__home js-menu-home" >
+          <li class="header__menu-item header__home">
             <a
               href="./"
               data-menu="home"
-              class="link header__menu-link"
+              class="link header__menu-link js-menu-home"
             >
               home</a
             >
           </li>
-
-          <li class="header__menu-item header__my-library js-menu-my-library" >
+          <li class="header__menu-item header__my-library">
             <a
               href="./myLibrary.html"
               data-menu="my-library"
-              class="link header__menu-link"
+              class="link header__menu-link js-menu-my-library"
             >
               my library</a
             >
+          </li>
+          <li class="header__menu-item header__my-library">
+            <a href="#!" class="link header__menu-link js-login"> Log in </a>
           </li>
         </ul>
         <!-- <div class="header__menu--underline-home"></div> -->
         <!-- //red line under active home button -->
       </nav>
       <div class="setting-box">
-        <div class="chenge-theme-togle">
-    <input type="checkbox" class="checkbox" id="checkbox">
-  <label for="checkbox" class="label">
-    <svg class="icon-sun" width="15" height="15"><use href="/src/images/darkTheme.svg#icon-sun"></use></svg>
-    <svg class="icon-moon" width="15" height="15"><use href="/src/images/darkTheme.svg#icon-moon"></use></svg>
-    <div class='ball'>
-  </label>
-</div>
-        <!-- <ul class="theme-toggle">
-          <li class="night-item">
-            <button type="button" class="night-btn" data-sign="night">
-              night
-            </button>
-          </li>
-          <li class="day-item">
-            <button type="button" class="day-btn" data-sign="day">day</button>
-          </li>
-        </ul> -->
-        <ul class="sign-list">
-          <li class="sign-item">
-            <button type="button" class="signin-btn" data-sign="in">
-              sign in
-            </button>
-          </li>
-          <li class="sign-item">
-            <button type="button" class="signup-btn" data-sign="up">
-              sign up
-            </button>
-          </li>
-          <li class="sign-item">
-            <button type="button" class="signout-btn is-hidden" data-sign="out">
-              sign out
-            </button>
-          </li>
-          <li class="sign-item">
-            <button type="button" class="owner-btn is-hidden" data-sign="owner">
-              owner
-            </button>
-          </li>
-        </ul>
+        <p class="js-user login-user"></p>
+        <div class="js-login-ui login-user__ui"></div>
       </div>
     </div>
 
-    <div class="form-box">
-    <form class="movie-search__form js-search-form" id="js-search-form ">
-      <input
-        class="search__form-input "
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Movie search"
-      />
-      <button type="submit" class="js-submit__search_btn search__button">
-        <img
-          src="./images/search.svg"
-          class="icon icon-search"
-          width="24px"
-          height="24px"
+    <div class="search-box">
+      <form class="movie-search__form js-search-form" id="js-search-form">
+        <input
+          class="search__form-input"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Movie search"
         />
+        <button type="submit" class="js-submit__search_btn search__button">
+          <img
+            src="./images/search.svg"
+            class="icon icon-search"
+            width="24px"
+            height="24px"
+          />
 
-        <div class="spinner-border text-danger spinner is-hidden" style role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-
-      </button>
-    </form>
-  </div>
+          <div
+            class="spinner-border text-danger spinner is-hidden"
+            style
+            role="status"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+        </button>
+      </form>
+    </div>
     <!-- <div class="form__search-not-succuessful">
       <p>Search result not successful. Enter the correct movie name and</p>
     </div> -->
 
     <!-- radiobuttons for filter   -->
-    <div class="my-library-buttons">
-      <form class="js-filter-my-library my-library__filter">
-        <label class="my-library__filter-label">
-          <input type="radio" name="filter" value="all" checked />
-          <span class="my-library__filter-btn filter__btn-all">All</span>
-        </label>
+    <div class="radio-box">
+      <div class="my-library-buttons">
+        <form class="js-filter-my-library my-library__filter">
+          <label class="my-library__filter-label">
+            <input type="radio" name="filter" value="all" checked />
+            <span class="my-library__filter-btn filter__btn-all">All</span>
+          </label>
 
-        <label class="my-library__filter-label">
-          <input type="radio" name="filter" value="isWatched" />
-          <span class="my-library__filter-btn filter__btn-watched"
-            >Watched</span
-          >
-        </label>
+          <label class="my-library__filter-label">
+            <input type="radio" name="filter" value="isWatched" />
+            <span class="my-library__filter-btn filter__btn-watched"
+              >Watched</span
+            >
+          </label>
 
-        <label class="my-library__filter-label">
-          <input type="radio" name="filter" value="isQueued" />
-          <span class="my-library__filter-btn filter__btn-queued">Queued</span>
-        </label>
-      </form>
-      <!-- <button type="button" class=" button btn__watched js-btn-watched">Watched</button>
-      
-        <button type="button" class=" button btn__queue js-btn-watched">Queue</button> -->
+          <label class="my-library__filter-label">
+            <input type="radio" name="filter" value="isQueued" />
+            <span class="my-library__filter-btn filter__btn-queued"
+              >Queued</span
+            >
+          </label>
+        </form>
+      </div>
     </div>
-
+    <div class="header__filter-box">
+      <!-- button genres -->
+      <div class="genre-btn">
+        <div class="dropdown">
+          <button class="dropbtn">Genres</button>
+          <ul id="myDropdown" class="dropdown-content"></ul>
+        </div>
+      </div>
+      <!--  -->
+      <div class="chenge-theme-togle">
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <label for="checkbox" class="label">
+          <svg class="icon-sun" width="15" height="15">
+            <use href="/src/images/darkTheme.svg#icon-sun"></use>
+          </svg>
+          <svg class="icon-moon" width="15" height="15">
+            <use href="/src/images/darkTheme.svg#icon-moon"></use>
+          </svg>
+          <div class="ball"></div>
+        </label>
+      </div>
+    </div>
   </div>
 </header>
