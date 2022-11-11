@@ -254,13 +254,13 @@ body.dark {
   fill: $light-color-primary;
 }
 
-.my-library__filter-label {
-  cursor: pointer;
-  &:focus,
-  &:hover {
-    // border: 1px solid $accent-color-primary;
-    background: $accent-color-primary;
-    box-shadow: 0px 8px 43px $accent-color-primary;
-    border-radius: 5px;
-  }
-}
+// .my-library__filter-label {
+//   cursor: pointer;
+//   &:focus,
+//   &:hover {
+//     // border: 1px solid $accent-color-primary;
+//     background: $accent-color-primary;
+//     box-shadow: 0px 8px 43px $accent-color-primary;
+//     border-radius: 5px;
+//   }
+// }
