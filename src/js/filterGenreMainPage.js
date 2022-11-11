@@ -30,21 +30,31 @@ export const genreAPI = new ServerRequest('discover/movie', config); // Ініц
 // const dropdownContent = document.querySelector('.dropdown-content');
 // const dropdown = document.querySelector('.dropdown');
 
-window.addEventListener('click', onClick);
+//==============================
+// window.addEventListener('click', onClick);
 
-export function onClick(event) {
-  // event.preventDefault();
-  if (!event.target.classList.contains('dropbtn')) {
-    refs.dropdownContent.classList.remove('show');
-    return;
-  }
+// export function onClick(event) {
+//   // event.preventDefault();
+//   if (!event.target.classList.contains('dropbtn')) {
+//     refs.dropdownContent.classList.remove('show');
+//     return;
+//   }
 
-  refs.element.removeEventListener('click', onClickPagination);
+//   refs.element.removeEventListener('click', onClickPagination);
 
-  refs.dropdownContent.classList.toggle('show');
+//   refs.dropdownContent.classList.toggle('show');
+//   renderGenres();
+// }
+
+//===============================
+
+refs.button.addEventListener('click', onClick);
+
+function onClick(event) {
   renderGenres();
 }
 
+//===============================
 refs.dropdownContent.addEventListener('click', onGenre);
 
 function onGenre(event) {
