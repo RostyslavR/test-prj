@@ -10,8 +10,6 @@ function ifLoaded(evt) {
   const activeClass = refNavigation.querySelector('.is-active');
   if (activeClass) activeClass.classList.remove('is-active');
 
-  console.log(document.location.pathname);
-
   switch ('/' + document.location.pathname.split('/').pop()) {
     case '/':
     case '/index.html':
@@ -53,7 +51,7 @@ function ifLoaded(evt) {
 
 function onNavigationClick(evt) {
   const btn = evt.target.dataset.menu;
-  const location = document.location.pathname;
+  const location = '/' + document.location.pathname.split('/').pop();
 
   (btn === 'home' && location === '/') ||
   (btn === 'home' && location === '/index.html') ||

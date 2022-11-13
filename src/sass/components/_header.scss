@@ -150,17 +150,6 @@
   }
 }
 
-// .header .header__menu-item {
-//   width: 80px;
-//   @include tablet {
-//     width: 130px;
-//   }
-// }
-
-// .header .header__my-library {
-//   width: 0;
-// }
-
 .header .header__menu-link {
   display: block;
   padding: 0 5px;
@@ -277,9 +266,6 @@ body.dark {
 }
 
 .label {
-  // width: 40px;
-  // height: 21px;
-
   background-color: #111;
   display: flex;
   border-radius: 50px;
@@ -287,8 +273,6 @@ body.dark {
   justify-content: space-between;
   padding: 2px;
   position: relative;
-  // transform: scale(1.5);
-
   cursor: pointer;
 }
 
@@ -317,19 +301,3 @@ body.dark {
 }
 
 //=====================
-.my-library__filter-label {
-  cursor: pointer;
-  transition: background-color, box-shadow 0.3s ease;
-
-  &:focus,
-  &:hover {
-    // border: 1px solid $accent-color-primary;
-    background: $accent-color-primary;
-    box-shadow: 0px 8px 43px $accent-color-primary;
-    border-radius: 5px;
-  }
-}
-
-.text-danger {
-  color: $accent-color-primary !important;
-}
