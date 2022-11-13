@@ -1,15 +1,11 @@
 <header class="header">
-  <div class="container header__container">
+  <div class="gallery__container header__container">
     <div class="header__menu">
       <nav class="navigation">
         <a class="logo header__logo js-logo" href="./" data-menu="logo">
-          <img
-            class="icon logo__icon"
-            width="24"
-            height="24"
-            data-menu="logo"
-            src="./images/film.svg"
-          />
+          <svg class="icon logo__icon" width="24px" height="24px">
+            <use href="/src/images/icons.svg#icon-film-h"></use>
+          </svg>
           <span class="logo__title" data-menu="logo">filmoteka</span>
         </a>
         <ul class="header__menu-list">
@@ -31,15 +27,50 @@
               my library</a
             >
           </li>
-          <li class="header__menu-item header__my-library">
-            <a href="#!" class="link header__menu-link js-login"> Log in </a>
+
+          <!--  ========== Auth buttons ========== -->
+          <li>
+            <span class="link header__menu-link js-icon-face">
+              <svg class="icon-sign" width="24" height="24">
+                <use class="js-face" href="/src/images/icons.svg#face"></use>
+              </svg>
+            </span>
           </li>
+          <li>
+            <!-- <a href="#!" class="link header__menu-link js-login"> Log in </a> -->
+
+            <a class="link header__menu-link js-login">
+              <svg class="icon-sign" width="26" height="26">
+                <use
+                  class="js-sign-in"
+                  href="/src/images/icons.svg#sign-in"
+                ></use>
+
+                <use
+                  class="js-sign-out"
+                  href="/src/images/icons.svg#sign-out"
+                ></use>
+              </svg>
+            </a>
+          </li>
+          <!--  ========== Auth buttons ========== -->
         </ul>
-        <!-- <div class="header__menu--underline-home"></div> -->
-        <!-- //red line under active home button -->
       </nav>
       <div class="setting-box">
-        <p class="js-user login-user"></p>
+        <div class="chenge-theme-togle">
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="label">
+            <svg class="icon-sun" width="20" height="20">
+              <use href="/src/images/darkTheme.svg#icon-sun"></use>
+            </svg>
+            <svg class="icon-moon" width="20" height="20">
+              <use href="/src/images/darkTheme.svg#icon-moon"></use>
+            </svg>
+            <div class="ball"></div>
+          </label>
+        </div>
+
+        <!-- <p class="js-user login-user"></p> -->
         <div class="js-login-ui login-user__ui"></div>
       </div>
     </div>
@@ -54,12 +85,9 @@
           placeholder="Movie search"
         />
         <button type="submit" class="js-submit__search_btn search__button">
-          <img
-            src="./images/search.svg"
-            class="icon icon-search"
-            width="24px"
-            height="24px"
-          />
+          <svg class="icon icon-search" width="20px" height="20px">
+            <use href="/src/images/icons.svg#icon-search"></use>
+          </svg>
 
           <div
             class="spinner-border text-danger spinner is-hidden"
@@ -71,9 +99,6 @@
         </button>
       </form>
     </div>
-    <!-- <div class="form__search-not-succuessful">
-      <p>Search result not successful. Enter the correct movie name and</p>
-    </div> -->
 
     <!-- radiobuttons for filter   -->
     <div class="radio-box">
@@ -100,28 +125,14 @@
         </form>
       </div>
     </div>
-    <div class="header__filter-box">
-      <!-- button genres -->
-      <!-- <div class="genre-btn"> -->
 
-      <!-- </div> -->
-      <!--  -->
-      <div class="chenge-theme-togle">
-        <input type="checkbox" class="checkbox" id="checkbox" />
-        <label for="checkbox" class="label">
-          <svg class="icon-sun" width="15" height="15">
-            <use href="/src/images/darkTheme.svg#icon-sun"></use>
-          </svg>
-          <svg class="icon-moon" width="15" height="15">
-            <use href="/src/images/darkTheme.svg#icon-moon"></use>
-          </svg>
-          <div class="ball"></div>
-        </label>
+    <!-- <div class="header__filter-box"> -->
+    <div class="genre-btn">
+      <div class="dropdown">
+        <button class="dropbtn">Genres</button>
+        <ul id="myDropdown" class="dropdown-content"></ul>
       </div>
     </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Genres</button>
-    <ul id="myDropdown" class="dropdown-content"></ul>
+    <!--  -->
   </div>
 </header>

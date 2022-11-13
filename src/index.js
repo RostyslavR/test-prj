@@ -2,7 +2,7 @@ import './js/createMarkup';
 
 import './js/modalTeam';
 
-import './js/movieCardModalAndriy';
+import './js/movieCardModal';
 
 import './js/header';
 import './js/filterGenreMainPage';
@@ -13,4 +13,4 @@ import './js/trailer';
 
 import './js/scroll-up-button';
 
-import './js/myLibrary/manageMovie';
+import './js/myLibrary/manageMovieFirebase';

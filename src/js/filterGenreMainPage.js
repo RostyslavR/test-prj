@@ -26,55 +26,33 @@ const config = {
 
 export const genreAPI = new ServerRequest('discover/movie', config); // Ініціалізує екземпляр класу для запитів на АРІ. При ініціалізації потрібно передати детальний шлях який додається до базової урли АРІ (БАЗОВА УРЛА ВЖЕ ПРИСУТНЯ В КЛАСІ!!!!!!), та обєкт конфігурацій
 // console.log(genreAPI);
-// const button = document.querySelector('.dropbtn');
-// const dropdownContent = document.querySelector('.dropdown-content');
-// const dropdown = document.querySelector('.dropdown');
 
-//==============================
-// window.addEventListener('click', onClick);
+window.addEventListener('click', onClick);
 
-// export function onClick(event) {
-//   // event.preventDefault();
-//   if (!event.target.classList.contains('dropbtn')) {
-//     refs.dropdownContent.classList.remove('show');
-//     return;
-//   }
+function onClick(event) {
+  if (!event.target.classList.contains('dropbtn')) {
+    refs.dropdownContent.classList.remove('show');
+    return;
+  }
 
-//   refs.element.removeEventListener('click', onClickPagination);
+  refs.element.removeEventListener('click', onClickPagination);
 
-//   refs.dropdownContent.classList.toggle('show');
-//   renderGenres();
-// }
-
-//===============================
-
-window.addEventListener('click', onClickWin);
-
-function onClickWin(event) {
-  console.log(event.target);
-  if (refs.dropdownContent.classList.contains('show'))
-    refs.dropdownContent.classList.add('show');
+  refs.dropdownContent.classList.toggle('show');
   renderGenres();
 }
 
-refs.button.addEventListener('click', onClickBtn);
-
-function onClickBtn(event) {
-  console.log(event.target);
-  refs.dropdownContent.classList.add('show');
-  renderGenres();
-}
-
-//===============================
 refs.dropdownContent.addEventListener('click', onGenre);
 
 function onGenre(event) {
   const target = event.target;
   const genreEl = target.closest('.genre-name');
-  console.log(genreEl);
+  // console.log(genreEl);
   if (!genreEl) {
     return;
   }
+
+  refs.button.textContent = target.textContent;
+
   genreAPI.idGenre = genreEl.dataset.genreid;
 
   searchGenres();
@@ -104,7 +82,7 @@ async function searchGenres() {
   }
 }
 
-function onPagination(event) {
+export function onPagination(event) {
   if (
     event.target === event.currentTarget ||
     event.target.textContent === '...'
@@ -136,12 +114,11 @@ function onPagination(event) {
 async function renderGenres() {
   try {
     const genres = await genreAPI.getGenres();
-    console.log(genres);
+    // console.log(genres);
     const markup = murkupFilterGenres(genres);
     refs.dropdownContent.innerHTML = markup.join('');
   } catch (error) {
     error.message;
-    console.log(error);
   }
 }
 
